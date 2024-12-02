@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #272727;
+    --secondary-color: #f4f4f4;
+    --accent-color: #007BFF;
+    --base-font-size: 16px; /* Base para rem y em */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--secondary-color);
+    color: #333;
+    font-size: 1rem; /* Basado en --base-font-size */
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo-img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.625rem;
+}
+
+header .logo {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+header nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav .menu li {
+    margin-left: 1.25rem;
+}
+
+header nav .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav .menu a:hover {
+    text-decoration: underline;
+}
+
+/* About Section */
+.about {
+    margin-top: 6rem; /* Espacio para el header fijo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    background: #fff;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+    max-width: 1000px; /* Ajustable */
+    margin: auto;
+}
+
+.about-img {
+    width: 20rem; /* Tamaño original en rem */
+    height: 24rem;
+    max-width: 100%; /* Escala proporcional en pantallas pequeñas */
+    border-radius: 50%;
+    margin-right: 2rem;
+    flex-shrink: 0; /* Mantiene el tamaño en pantallas pequeñas */
+}
+
+.about-text {
+    max-width: 50rem; /* 480px */
+    flex: 1;
+}
+
+.about-text h2 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+}
+
+.about-text p {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+/* Sections */
+section {
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .about {
+        padding: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column; /* Cambia a diseño vertical */
+    }
+
+    .about-img {
+        margin: 0 auto 1rem; /* Centra la imagen en pantallas pequeñas */
+    }
+
+    .about-text {
+        text-align: center; /* Ajusta el texto en pantallas pequeñas */
+    }
+}
