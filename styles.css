@@ -76,7 +76,7 @@ header nav .menu a:hover {
 
 /* About Section */
 .about {
-    margin-top: 6rem; /* Espacio para el header fijo */
+    margin-top: 8rem; /* Espacio para el header fijo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +95,7 @@ header nav .menu a:hover {
 
 .about-img {
     width: 20rem; /* Tamaño original en rem */
-    height: 24rem;
+    height: 26rem;
     max-width: 100%; /* Escala proporcional en pantallas pequeñas */
     border-radius: 50%;
     margin-right: 2rem;
@@ -115,6 +115,39 @@ header nav .menu a:hover {
 .about-text p {
     margin: 0;
     font-size: 1.3rem;
+}
+
+/* Redes sociales - Social Media Section */
+.social-links {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Espacio entre los iconos */
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8; /* Leve transparencia */
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Ampliación al pasar el cursor */
+    opacity: 1; /* Opacidad completa al pasar el cursor */
+}
+
+.social-icon {
+    width: 3em;
+    height: 3em;
+    border-radius: 30%; /* Opcional: redondear los íconos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    transition: box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el cursor */
 }
 
 /* Sections */
@@ -139,6 +172,38 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Creditos */
+.credits {
+    font-size: 0.8rem; /* Texto pequeño */
+    color: #666; /* Color tenue */
+    text-align: center; /* Centrado */
+    margin-top: 2rem; /* Separación del contenido principal */
+    padding: 1rem;
+    background: #f9f9f9; /* Fondo suave */
+    border-top: 1px solid #ddd; /* Línea divisoria */
+}
+
+.credits ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.credits li {
+    display: inline; /* Mostrar en línea */
+    margin: 0 0.5rem;
+}
+
+.credits a {
+    color: #007BFF; /* Color de enlace */
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.credits a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
 /* Media Queries para Responsividad */
