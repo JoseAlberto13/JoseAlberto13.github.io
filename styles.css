@@ -73,6 +73,37 @@ header nav .menu a {
 header nav .menu a:hover {
     text-decoration: underline;
 }
+/* Name Animation */
+
+.animated-text {
+    display: inline-block;
+    font-size: 2rem;
+    font-family: monospace;
+    overflow: hidden; /* Oculta el texto que no está visible durante la animación */
+    border-right: 2px solid #000; /* Simula el cursor */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    max-width: fit-content; /* Limita el ancho al contenido */
+    animation: typing 4s steps(40, end) infinite alternate-reverse, blink 0.9s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0; /* Comienza sin mostrar texto */
+    }
+    to {
+        width: 100%; /* Muestra todo el texto */
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent; /* Hace que el cursor parpadee */
+    }
+    50% {
+        border-color: black;
+    }
+}
+
 
 /* About Section */
 .about {
