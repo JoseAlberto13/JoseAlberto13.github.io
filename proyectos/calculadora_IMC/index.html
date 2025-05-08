@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+        <div class="form-container">
+            <div class="input-group">
+                <label for="peso">Peso (kg):</label>
+                <div class="control-group">
+                    <button class="control-btn" 
+                            onmousedown="iniciarAjusteContinuo('peso', -0.1)" 
+                            onmouseup="detenerAjuste()" 
+                            onmouseleave="detenerAjuste()">-</button>
+                    <input type="range" id="peso" min="10" max="140" step="0.1" value="70">
+                    <button class="control-btn" 
+                            onmousedown="iniciarAjusteContinuo('peso', 0.1)" 
+                            onmouseup="detenerAjuste()" 
+                            onmouseleave="detenerAjuste()">+</button>
+                </div>
+                <span id="peso-valor">70 kg</span>
+            </div>
+
+            <div class="input-group">
+                <label for="altura">Altura (m):</label>
+                <div class="control-group">
+                    <button class="control-btn" 
+                            onmousedown="iniciarAjusteContinuo('altura', -0.01)" 
+                            onmouseup="detenerAjuste()" 
+                            onmouseleave="detenerAjuste()">-</button>
+                    <input type="range" id="altura" min="0.60" max="2.20" step="0.01" value="1.70">
+                    <button class="control-btn" 
+                            onmousedown="iniciarAjusteContinuo('altura', 0.01)" 
+                            onmouseup="detenerAjuste()" 
+                            onmouseleave="detenerAjuste()">+</button>
+                </div>
+                <span id="altura-valor">1.70 m</span>
+            </div>
+
+            <div class="imc-display">
+                <div class="imc-circle">
+                    <span id="imc-valor">24.2</span>
+                    <span class="imc-label">IMC</span>
+                </div>
+            </div>
+
+            <div class="imc-scale">
+                <div class="scale-marker bajo-peso">Bajo</div>
+                <div class="scale-marker normal">Normal</div>
+                <div class="scale-marker sobrepeso">Sobrepeso</div>
+                <div class="scale-marker obesidad">Obesidad</div>
+            </div>
+
+            <div class="resultado" id="resultado">
+                <p id="imc-categoria"></p>
+                <p id="imc-recomendacion"></p>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/script.js"></script>
+</body>
+</html>

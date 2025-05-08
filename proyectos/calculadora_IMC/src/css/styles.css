@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --bajo-peso: #ffeaa7;
+    --normal: #55efc4;
+    --sobrepeso: #fab1a0;
+    --obesidad: #ff7675;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f6fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.control-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background: var(--primary-color);
+}
+
+input[type="range"] {
+    flex: 1;
+}
+
+#peso-valor, #altura-valor {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.imc-display {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.imc-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+#imc-valor {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.imc-label {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.imc-scale {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.scale-marker {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.scale-marker.bajo-peso { background-color: var(--bajo-peso); }
+.scale-marker.normal { background-color: var(--normal); }
+.scale-marker.sobrepeso { background-color: var(--sobrepeso); }
+.scale-marker.obesidad { background-color: var(--obesidad); }
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#imc-categoria {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#imc-recomendacion {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .imc-circle {
+        width: 120px;
+        height: 120px;
+    }
+}
