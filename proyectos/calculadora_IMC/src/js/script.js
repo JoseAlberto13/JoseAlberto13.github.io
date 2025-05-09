@@ -1,10 +1,10 @@
 // Constantes para categorías de IMC
 const CATEGORIAS_IMC = {
-    BAJO_PESO: { max: 18.5, color: '#ffeaa7', texto: 'Bajo Peso', recomendacion: 'Se recomienda una evaluación nutricional y aumentar la ingesta calórica de manera saludable.' },
-    NORMAL: { max: 25, color: '#55efc4', texto: 'Peso Normal', recomendacion: 'Mantener hábitos saludables de alimentación y ejercicio regular.' },
-    SOBREPESO: { max: 30, color: '#fab1a0', texto: 'Sobrepeso', recomendacion: 'Se recomienda aumentar la actividad física y ajustar la dieta.' },
-    OBESIDAD: { max: 40, color: '#ff7675', texto: 'Obesidad', recomendacion: 'Es importante consultar con un profesional de la salud para un plan de pérdida de peso.' },
-    OBESIDAD_MORBIDA: { max: Infinity, color: '#ff7675', texto: 'Obesidad Mórbida', recomendacion: 'Se requiere atención médica inmediata y un plan de tratamiento especializado.' }
+    BAJO_PESO: { max: 18.5, color: '#ffeaa7', texto: 'Bajo Peso'},
+    NORMAL: { max: 25, color: '#55efc4', texto: 'Peso Normal'},
+    SOBREPESO: { max: 30, color: '#fab1a0', texto: 'Sobrepeso'},
+    OBESIDAD: { max: 40, color: '#ff7675', texto: 'Obesidad'},
+    OBESIDAD_MORBIDA: { max: Infinity, color: '#ff7675', texto: 'Obesidad Mórbida',}
 };
 
 // Variables para el control de ajuste
@@ -22,7 +22,6 @@ function calcularIMC() {
     // Actualizar la visualización
     document.getElementById('imc-valor').textContent = imc.toFixed(1);
     document.getElementById('imc-categoria').textContent = categoria.texto;
-    document.getElementById('imc-recomendacion').textContent = categoria.recomendacion;
     
     // Actualizar el color del círculo
     document.querySelector('.imc-circle').style.background = categoria.color;
