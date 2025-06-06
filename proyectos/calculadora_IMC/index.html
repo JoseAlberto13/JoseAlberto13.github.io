@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
+    <title>Calculadora IMC con Tabla Z</title>
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Calculadora de IMC</h1>
+
+        <!-- Selector de modo -->
+        <div class="mode-selector">
+            <div class="mode-toggle">
+                <button id="btn-adulto" class="active" onclick="cambiarModo('adulto')"><b>Adulto</b></button>
+                <button id="btn-infante" onclick="cambiarModo('infante')"><b>Infante</b></button>
+            </div>
+        </div>
+
+        <!-- Inputs de edad para infantes -->
+        <div id="age-inputs" class="age-inputs">
+            <label>Edad del paciente:</label>
+            <div class="age-row">
+                <div class="age-input">
+                    <label>Años:</label>
+                    <input type="number" id="anos" min="0" max="9" value="2" onchange="actualizarValores()">
+                </div>
+                <div class="age-input">
+                    <label>Meses:</label>
+                    <input type="number" id="meses" min="0" max="11" value="0" onchange="actualizarValores()">
+                </div>
+            </div>
+        </div>
+
         <div class="form-container">
             <div class="input-group">
                 <label for="peso">Peso (kg):</label>
                 <div class="control-group">
-                    <button class="control-btn" 
-                            onmousedown="iniciarAjusteContinuo('peso', -0.1)" 
-                            onmouseup="detenerAjuste()" 
-                            onmouseleave="detenerAjuste()">-</button>
+                    <button class="control-btn" onmousedown="iniciarAjusteContinuo('peso', -0.1)"
+                        onmouseup="detenerAjuste()" onmouseleave="detenerAjuste()">-</button>
                     <input type="range" id="peso" min="10" max="140" step="0.1" value="70">
-                    <button class="control-btn" 
-                            onmousedown="iniciarAjusteContinuo('peso', 0.1)" 
-                            onmouseup="detenerAjuste()" 
-                            onmouseleave="detenerAjuste()">+</button>
+                    <button class="control-btn" onmousedown="iniciarAjusteContinuo('peso', 0.1)"
+                        onmouseup="detenerAjuste()" onmouseleave="detenerAjuste()">+</button>
                 </div>
                 <span id="peso-valor">70 kg</span>
             </div>
@@ -29,15 +51,11 @@
             <div class="input-group">
                 <label for="altura">Altura (m):</label>
                 <div class="control-group">
-                    <button class="control-btn" 
-                            onmousedown="iniciarAjusteContinuo('altura', -0.01)" 
-                            onmouseup="detenerAjuste()" 
-                            onmouseleave="detenerAjuste()">-</button>
+                    <button class="control-btn" onmousedown="iniciarAjusteContinuo('altura', -0.01)"
+                        onmouseup="detenerAjuste()" onmouseleave="detenerAjuste()">-</button>
                     <input type="range" id="altura" min="0.60" max="2.20" step="0.01" value="1.70">
-                    <button class="control-btn" 
-                            onmousedown="iniciarAjusteContinuo('altura', 0.01)" 
-                            onmouseup="detenerAjuste()" 
-                            onmouseleave="detenerAjuste()">+</button>
+                    <button class="control-btn" onmousedown="iniciarAjusteContinuo('altura', 0.01)"
+                        onmouseup="detenerAjuste()" onmouseleave="detenerAjuste()">+</button>
                 </div>
                 <span id="altura-valor">1.70 m</span>
             </div>
@@ -60,7 +78,55 @@
                 <p id="imc-categoria"></p>
             </div>
         </div>
+
+        <!-- Gráfico de Tabla Z -->
+        <div id="z-chart-container" class="z-chart-container">
+            <div class="z-chart-title">Gráfico de Percentiles OMS</div>
+            <div class="z-chart">
+                <svg id="z-chart-svg" viewBox="0 0 400 160">
+                    <!-- Curva de distribución normal -->
+                    <path id="normal-curve" fill="none" stroke="#3498db" stroke-width="2" />
+
+                    <!-- Líneas de percentiles -->
+                    <line x1="80" y1="20" x2="80" y2="140" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3" />
+                    <line x1="120" y1="20" x2="120" y2="140" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,3" />
+                    <line x1="200" y1="20" x2="200" y2="140" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,3" />
+                    <line x1="280" y1="20" x2="280" y2="140" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,3" />
+                    <line x1="320" y1="20" x2="320" y2="140" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3" />
+
+                    <!-- Línea del paciente -->
+                    <line id="patient-line" x1="200" y1="20" x2="200" y2="140" stroke="#2c3e50" stroke-width="3" />
+
+                    <!-- Etiquetas de percentiles -->
+                    <text x="80" y="155" text-anchor="middle" font-size="10" fill="#666">P3</text>
+                    <text x="120" y="155" text-anchor="middle" font-size="10" fill="#666">P15</text>
+                    <text x="200" y="155" text-anchor="middle" font-size="10" fill="#666">P50</text>
+                    <text x="280" y="155" text-anchor="middle" font-size="10" fill="#666">P85</text>
+                    <text x="320" y="155" text-anchor="middle" font-size="10" fill="#666">P97</text>
+
+                    <!-- Área sombreada -->
+                    <path id="shaded-area" fill="rgba(52, 152, 219, 0.2)" stroke="none" />
+                </svg>
+            </div>
+
+            <div class="percentile-info">
+                <div class="percentile-card">
+                    <h4>Percentil Peso</h4>
+                    <div class="percentile-value" id="percentil-peso">P50</div>
+                </div>
+                <div class="percentile-card">
+                    <h4>Percentil Altura</h4>
+                    <div class="percentile-value" id="percentil-altura">P50</div>
+                </div>
+            </div>
+
+            <div class="percentile-interpretation">
+                <h4>Interpretación:</h4>
+                <p id="interpretacion-texto">El paciente se encuentra en el percentil normal para su edad.</p>
+            </div>
+        </div>
     </div>
     <script src="src/js/script.js"></script>
 </body>
+
 </html>

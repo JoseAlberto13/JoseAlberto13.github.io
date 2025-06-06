@@ -10,11 +10,11 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 32px;
     background-color: #f5f6fa;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -24,7 +24,7 @@ body {
     background-color: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -75,7 +75,8 @@ input[type="range"] {
     flex: 1;
 }
 
-#peso-valor, #altura-valor {
+#peso-valor,
+#altura-valor {
     display: block;
     text-align: center;
     font-weight: bold;
@@ -127,10 +128,21 @@ input[type="range"] {
     font-weight: bold;
 }
 
-.scale-marker.bajo-peso { background-color: var(--bajo-peso); }
-.scale-marker.normal { background-color: var(--normal); }
-.scale-marker.sobrepeso { background-color: var(--sobrepeso); }
-.scale-marker.obesidad { background-color: var(--obesidad); }
+.scale-marker.bajo-peso {
+    background-color: var(--bajo-peso);
+}
+
+.scale-marker.normal {
+    background-color: var(--normal);
+}
+
+.scale-marker.sobrepeso {
+    background-color: var(--sobrepeso);
+}
+
+.scale-marker.obesidad {
+    background-color: var(--obesidad);
+}
 
 .resultado {
     margin-top: 20px;
@@ -149,13 +161,160 @@ input[type="range"] {
     line-height: 1.4;
 }
 
+/* Nuevos estilos para el modo infante y gráfico Z */
+.mode-selector {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mode-toggle {
+    display: inline-flex;
+    background: white;
+    border-radius: 18px;
+    padding: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mode-toggle button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 18px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.mode-toggle button.active {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.age-inputs {
+    display: none;
+    background: #c9dfff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.age-inputs.show {
+    display: block;
+}
+
+.age-row {
+    display: flex;
+    gap: 10px;
+}
+
+.age-input {
+    flex: 1;
+}
+
+.age-input input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.z-chart-container {
+    display: none;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.z-chart-container.show {
+    display: block;
+}
+
+.z-chart-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.z-chart {
+    position: relative;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.z-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+.percentile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.percentile-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.percentile-card h4 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.percentile-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.percentile-interpretation {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.percentile-interpretation h4 {
+    color: var(--primary-color);
+    margin: 0 0 10px 0;
+}
+
+.percentile-interpretation p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 @media (max-width: 500px) {
     .container {
         padding: 15px;
     }
-    
+
     .imc-circle {
         width: 120px;
         height: 120px;
+    }
+
+    .percentile-info {
+        grid-template-columns: 1fr;
     }
 }
