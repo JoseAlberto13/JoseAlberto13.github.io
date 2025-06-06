@@ -205,58 +205,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Creditos */
-.credits {
-    font-size: 0.8rem; /* Texto pequeño */
-    color: #666; /* Color tenue */
-    text-align: center; /* Centrado */
-    margin-top: 2rem; /* Separación del contenido principal */
-    padding: 1rem;
-    background: #f9f9f9; /* Fondo suave */
-    border-top: 1px solid #ddd; /* Línea divisoria */
-}
-
-.credits ul {
-    list-style: none; /* Sin viñetas */
-    padding: 0;
-    margin: 0.5rem 0;
-}
-
-.credits li {
-    display: inline; /* Mostrar en línea */
-    margin: 0 0.5rem;
-}
-
-.credits a {
-    color: #007BFF; /* Color de enlace */
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.credits a:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
-}
-
-/* Media Queries para Responsividad */
-@media (max-width: 768px) {
-    .about {
-        padding: 1rem;
-    }
-
-    .about-container {
-        flex-direction: column; /* Cambia a diseño vertical */
-    }
-
-    .about-img {
-        margin: 0 auto 1rem; /* Centra la imagen en pantallas pequeñas */
-    }
-
-    .about-text {
-        text-align: center; /* Ajusta el texto en pantallas pequeñas */
-    }
-}
-
-
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -271,16 +219,24 @@ a:hover {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
+    position: relative;
 }
 
 .project-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    transition: transform 0.4s ease, height 0.4s ease;
+}
+
+.project-image:hover {
+    height: 400px;
+    transform: scale(1.18);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
@@ -289,6 +245,7 @@ a:hover {
     color: var(--primary-color);
 }
 
+/* Color del texto de las tarjetas de los proyectos */
 .project-card p {
     padding: 0 1rem;
     color: #666;
@@ -328,4 +285,61 @@ a:hover {
 .project-btn:hover {
     background: #0056b3;
     text-decoration: none;
+}
+
+/* Creditos - Footer */
+.credits {
+    font-size: 0.8rem; /* Texto pequeño */
+    color: #666; /* Color tenue */
+    text-align: center; /* Centrado */
+    margin-top: 2rem; /* Separación del contenido principal */
+    padding: 1rem;
+    background: #f9f9f9; /* Fondo suave */
+    border-top: 1px solid #ddd; /* Línea divisoria */
+}
+
+.credits ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.credits li {
+    display: inline; /* Mostrar en línea */
+    margin: 0 0.5rem;
+}
+
+.credits a {
+    color: #003BFF; /* Color de enlace */
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.credits a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .about {
+        padding: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column; /* Cambia a diseño vertical */
+    }
+
+    .about-img {
+        margin: 0 auto 1rem; /* Centra la imagen en pantallas pequeñas */
+    }
+
+    .about-text {
+        text-align: center; /* Ajusta el texto en pantallas pequeñas */
+    }
+}
+
+#about,
+#projects,
+#contact {
+  scroll-margin-top: 6rem;
 }
