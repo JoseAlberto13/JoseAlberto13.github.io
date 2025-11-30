@@ -3,6 +3,36 @@
     --secondary-color: #f4f4f4;
     --accent-color: #007BFF;
     --base-font-size: 16px; /* Base para rem y em */
+    
+    /* Variables para modo claro (default) */
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --card-bg: #fff;
+    --section-bg: #fff;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --project-text: #666;
+    --tech-tag-bg: #f4f4f4;
+    --tech-tag-text: #272727;
+    --credits-bg: #f9f9f9;
+    --credits-text: #666;
+    --cursor-color: #000;
+}
+
+/* Variables para modo oscuro */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --section-bg: #2d2d2d;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --project-text: #b0b0b0;
+    --tech-tag-bg: #3d3d3d;
+    --tech-tag-text: #e0e0e0;
+    --credits-bg: #252525;
+    --credits-text: #b0b0b0;
+    --cursor-color: #fff;
 }
 
 body {
@@ -10,9 +40,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: var(--secondary-color);
-    color: #333;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-size: 1rem; /* Basado en --base-font-size */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header */
@@ -53,6 +84,11 @@ header .logo {
     color: #fff;
 }
 
+header nav {
+    display: flex;
+    align-items: center;
+}
+
 header nav .menu {
     list-style: none;
     margin: 0;
@@ -73,6 +109,36 @@ header nav .menu a {
 header nav .menu a:hover {
     text-decoration: underline;
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    display: inline-block;
+    transition: transform 0.9s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(-360deg);
+}
 /* Name Animation */
 
 .animated-text {
@@ -80,7 +146,7 @@ header nav .menu a:hover {
     font-size: 2rem;
     font-family: monospace;
     overflow: hidden; /* Oculta el texto que no está visible durante la animación */
-    border-right: 2px solid #000; /* Simula el cursor */
+    border-right: 2px solid var(--cursor-color); /* Simula el cursor */
     white-space: nowrap; /* Evita que el texto se envuelva */
     max-width: fit-content; /* Limita el ancho al contenido */
     animation: typing 4s steps(40, end) infinite alternate-reverse, blink 0.9s step-end infinite;
@@ -100,7 +166,7 @@ header nav .menu a:hover {
         border-color: transparent; /* Hace que el cursor parpadee */
     }
     50% {
-        border-color: black;
+        border-color: var(--cursor-color);
     }
 }
 
@@ -112,8 +178,9 @@ header nav .menu a:hover {
     justify-content: center;
     align-items: center;
     padding: 3rem 1rem;
-    background: #fff;
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    background: var(--section-bg);
+    box-shadow: 0 0.125rem 0.3125rem var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-container {
@@ -146,6 +213,8 @@ header nav .menu a:hover {
 .about-text p {
     margin: 0;
     font-size: 1.3rem;
+    text-align: justify;
+    line-height: 1.8;
 }
 
 /* Redes sociales - Social Media Section */
@@ -173,21 +242,23 @@ header nav .menu a:hover {
     width: 3em;
     height: 3em;
     border-radius: 30%; /* Opcional: redondear los íconos */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
-    transition: box-shadow 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 8px 1px rgb(189 188 255 / 70%);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .social-icon:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el cursor */
-}
+    box-shadow: 0 4px 8px 3px rgb(189 188 255 / 80%); /* Sombra más intensa al pasar el cursor */
+} 
 
 /* Sections */
 section {
     margin: 2rem 1rem;
     padding: 1rem;
-    background: #fff;
+    background: var(--section-bg);
     border-radius: 0.5rem;
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.3125rem var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 section h2 {
@@ -214,11 +285,11 @@ a:hover {
 }
 
 .project-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 1px 4px 7px var(--shadow-color);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     text-align: center;
 }
@@ -237,19 +308,21 @@ a:hover {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px var(--shadow-color);
 }
 
 .project-card h3 {
     padding: 1rem;
     margin: 0;
-    color: var(--primary-color);
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Color del texto de las tarjetas de los proyectos */
 .project-card p {
     padding: 0 1rem;
-    color: #666;
+    color: var(--project-text);
+    transition: color 0.3s ease;
 }
 
 .project-tech {
@@ -260,11 +333,12 @@ a:hover {
 }
 
 .tech-tag {
-    background: var(--secondary-color);
-    color: var(--primary-color);
+    background: var(--tech-tag-bg);
+    color: var(--tech-tag-text);
     padding: 0.3rem 0.8rem;
     border-radius: 1rem;
     font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-links {
@@ -291,12 +365,13 @@ a:hover {
 /* Creditos - Footer */
 .credits {
     font-size: 0.8rem; /* Texto pequeño */
-    color: #666; /* Color tenue */
+    color: var(--credits-text); /* Color tenue */
     text-align: center; /* Centrado */
     margin-top: 2rem; /* Separación del contenido principal */
     padding: 1rem;
-    background: #f9f9f9; /* Fondo suave */
-    border-top: 1px solid #ddd; /* Línea divisoria */
+    background: var(--credits-bg); /* Fondo suave */
+    border-top: 1px solid var(--border-color); /* Línea divisoria */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .credits ul {
