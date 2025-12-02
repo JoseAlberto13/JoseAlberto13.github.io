@@ -413,9 +413,6 @@ a:hover {
         margin: 0 auto 1rem; /* Centra la imagen en pantallas pequeñas */
     }
 
-    .about-text {
-        text-align: center; /* Ajusta el texto en pantallas pequeñas */
-    }
 }
 
 /* Media Queries para teléfonos */
@@ -425,8 +422,12 @@ a:hover {
         display: none;
     }
 
+    h2, .container h2 {
+        font-size: 1.5rem !important;
+    }
+
     .animated-text {
-        font-size: 1.6rem; /* Centra la imagen en pantallas pequeñas */
+        font-size: 1.2rem; /* Centra la imagen en pantallas pequeñas */
     }
 
 }
