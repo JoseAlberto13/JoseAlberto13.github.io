@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Calculadora IMC",
+    "image": "./proyectos/calculadora_IMC/src/assets/images/preview-imagen.png",
+    "description": "Una calculadora de Índice de Masa Corporal interactiva y moderna que ayuda a evaluar el estado de salud basado en peso y altura.",
+    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "demoLink": "./proyectos/calculadora_IMC/index.html",
+    "codeLink": "https://github.com/JoseAlberto13/JoseAlberto13.github.io/tree/main/proyectos/calculadora_IMC"
+  },
+  {
+    "title": "MiniGame 2D",
+    "image": "./assets/images/projects/menu-inicio-miniGame.png",
+    "description": "Juego multijugador por turnos en 2D con mecánicas de viento y disparo. Permite partidas locales entre dos jugadores.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Canvas API"],
+    "demoLink": "https://josealberto13.github.io/MiniGame2D/",
+    "codeLink": "https://github.com/JoseAlberto13/MiniGame2D"
+  },
+  {
+    "title": "Hidrátate PWA",
+    "image": "./assets/images/projects/Hidratate-icon.png",
+    "description": "Una aplicación web progresiva (PWA) que ayuda a los usuarios a mantenerse hidratados a lo largo del día.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Service Workers"],
+    "demoLink": "https://josealberto13.github.io/Hidratate-PWA/",
+    "codeLink": "https://github.com/JoseAlberto13/Hidratate-PWA"
+  }
+]

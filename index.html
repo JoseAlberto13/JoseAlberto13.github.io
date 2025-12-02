@@ -8,6 +8,7 @@
     <link rel="icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/projects.js" defer></script>
 </head>
 
 <body>
@@ -27,7 +28,8 @@
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                    <span class="theme-icon"><img src="./assets/images/dia-y-noche.png" alt="Modo Oscuro / Claro"></span>
+                    <span class="theme-icon"><img src="./assets/images/dia-y-noche.png"
+                            alt="Modo Oscuro / Claro"></span>
                 </button>
             </nav>
         </div>
@@ -43,11 +45,15 @@
                     </div>
                     <h2>Sobre mí</h2>
                     <p>Estudiante de Analista Programador y desarrollador en formación.
-                         Me interesa el desarrollo web y disfruto crear pequeños proyectos personales donde pongo en práctica lo que aprendo:
-                         HTML, CSS, JavaScript, Python y mis primeros pasos con React.
-                         Aunque aún estoy construyendo mi camino, me gusta experimentar, mejorar mis ideas y entender cómo funcionan las cosas por dentro.
-                         Estoy buscando mi primera oportunidad en TI para seguir creciendo, aprender de personas con más experiencia y aportar con dedicación y ganas de mejorar.
-                        Si quieres ver cómo avanzo y qué tipo de proyectos voy construyendo, te invito a revisar mi GitHub.
+                        Me interesa el desarrollo web y disfruto crear pequeños proyectos personales donde pongo en
+                        práctica lo que aprendo:
+                        HTML, CSS, JavaScript, Python y mis primeros pasos con React.
+                        Aunque aún estoy construyendo mi camino, me gusta experimentar, mejorar mis ideas y entender
+                        cómo funcionan las cosas por dentro.
+                        Estoy buscando mi primera oportunidad en TI para seguir creciendo, aprender de personas con más
+                        experiencia y aportar con dedicación y ganas de mejorar.
+                        Si quieres ver cómo avanzo y qué tipo de proyectos voy construyendo, te invito a revisar mi
+                        GitHub.
                         También puedes descargar mi CV para conocer un poco más de mi perfil.
                     </p>
                     <!-- Redes sociales -->
@@ -70,68 +76,8 @@
             <h2>Proyectos</h2>
 
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Calculadora IMC</h3>
-                    <a href="./proyectos/calculadora_IMC/index.html">
-                        <img src="./proyectos/calculadora_IMC/src/assets/images/preview-imagen.png"
-                            alt="Calculadora IMC Preview - Ver Demo" class="project-image">
-                    </a>
-                    <p>Una calculadora de Índice de Masa Corporal interactiva y moderna que ayuda a evaluar el estado de
-                        salud basado en peso y altura.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="./proyectos/calculadora_IMC/index.html" class="project-btn" target="_blank">Ver
-                            Demo</a>
-                        <a href="https://github.com/JoseAlberto13/JoseAlberto13.github.io/tree/main/proyectos/calculadora_IMC"
-                            class="project-btn" target="_blank">Ver Código</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>MiniGame 2D</h3>
-                    <a href="https://josealberto13.github.io/MiniGame2D/">
-                        <img src="./assets/images/projects/menu-inicio-miniGame.png" alt="MiniGame 2D Preview" class="project-image">
-                    </a>
-                    <p>Juego multijugador por turnos en 2D con mecánicas de viento y disparo. Permite partidas locales
-                        entre dos jugadores.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Canvas API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://josealberto13.github.io/MiniGame2D/" class="project-btn" target="_blank">Ver
-                            Demo</a>
-                        <a href="https://github.com/JoseAlberto13/MiniGame2D" class="project-btn" target="_blank">Ver
-                            Código</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Hidrátate PWA</h3>
-                    <a href="https://josealberto13.github.io/Hidratate-PWA/">
-                        <img src="./assets/images/projects/Hidratate-icon.png" alt="Hidrátate PWA Preview" class="project-image">
-                    </a>
-                    <p>Una aplicación web progresiva (PWA) que ayuda a los usuarios a mantenerse hidratados a lo largo
-                        del día.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Service Workers</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://josealberto13.github.io/Hidratate-PWA/" class="project-btn" target="_blank">Ver
-                            Demo</a>
-                        <a href="https://github.com/JoseAlberto13/Hidratate-PWA" class="project-btn" target="_blank">Ver
-                            Código</a>
-                    </div>
-                </div>
+                <!-- Proyectos cargarán dinámicamente -->
+            </div>
         </section>
 
         <section id="contact">
