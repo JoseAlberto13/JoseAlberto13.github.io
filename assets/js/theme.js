@@ -25,7 +25,7 @@ function setTheme(theme) {
 function updateThemeIcon(theme) {
     const themeIcon = document.querySelector('.theme-icon img');
     if (themeIcon) {
-        themeIcon.src = theme === 'dark' ? './image/noche-y-dia.png' : './image/dia-y-noche.png';
+        themeIcon.src = theme === 'dark' ? './assets/images/noche-y-dia.png' : './assets/images/dia-y-noche.png';
         themeIcon.alt = theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
     }
 }

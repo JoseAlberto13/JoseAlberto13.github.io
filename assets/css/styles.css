@@ -401,6 +401,10 @@ a:hover {
         padding: 1rem;
     }
 
+    .animated-text {
+        font-size: 1.8rem; /* Centra la imagen en pantallas pequeñas */
+    }
+
     .about-container {
         flex-direction: column; /* Cambia a diseño vertical */
     }
@@ -412,6 +416,19 @@ a:hover {
     .about-text {
         text-align: center; /* Ajusta el texto en pantallas pequeñas */
     }
+}
+
+/* Media Queries para teléfonos */
+@media (max-width: 480px) {
+
+    .logo {
+        display: none;
+    }
+
+    .animated-text {
+        font-size: 1.6rem; /* Centra la imagen en pantallas pequeñas */
+    }
+
 }
 
 #about,
