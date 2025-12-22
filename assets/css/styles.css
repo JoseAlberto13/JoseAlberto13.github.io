@@ -187,17 +187,19 @@ header nav .menu a:hover {
     display: flex;
     align-items: center;
     flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
-    max-width: 1000px; /* Ajustable */
+    max-width: 1480px; /* Ajustable */
     margin: auto;
 }
 
 .about-img {
     width: 20rem; /* Tamaño original en rem */
-    height: 26rem;
-    max-width: 100%; /* Escala proporcional en pantallas pequeñas */
+    height: 20rem;
+    max-width: 100%;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
     margin-right: 2rem;
-    flex-shrink: 0; /* Mantiene el tamaño en pantallas pequeñas */
+    flex-shrink: 0;
 }
 
 .about-text {
