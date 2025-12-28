@@ -22,5 +22,27 @@
     "technologies": ["HTML5", "CSS3", "JavaScript", "Service Workers"],
     "demoLink": "https://josealberto13.github.io/Hidratate-PWA/",
     "codeLink": "https://github.com/JoseAlberto13/Hidratate-PWA"
+  },
+  {
+    "title": "Calculadora Python",
+    "image": "./assets/images/projects/calculadora-python.png",
+    "description": "Calculadora básica desarrollada en Python que realiza operaciones aritméticas simples como suma, resta, multiplicación y división.",
+    "technologies": ["Python", "Tkinter", "Ttkbootstrap-python", "Unittest"],
+    "demoLink": "https://github.com/JoseAlberto13/calculator-tdd/releases/tag/v1.1",
+    "codeLink": "https://github.com/JoseAlberto13/calculator-tdd"
+  },
+  {
+    "title": "Scanner de Vulnerabilidades OWASP",
+    "image": "https://github.com/JoseAlberto13/Scanner-de-Vulnerabilidades-OWASP/blob/main/docs/screenshots/ui-preview.png?raw=true",
+    "description": "Aplicación web educativa en Flask orientada a la introducción en auditorías de seguridad OWASP, con análisis básicos y generación de reportes en PDF.",
+    "technologies": [
+      "Python",
+      "Flask",
+      "Requests",
+      "BeautifulSoup4",
+      "Python-nmap"
+    ],
+    "demoLink": "https://github.com/JoseAlberto13/Scanner-de-Vulnerabilidades-OWASP?tab=readme-ov-file#-requisitos-previos",
+    "codeLink": "https://github.com/JoseAlberto13/Scanner-de-Vulnerabilidades-OWASP"
   }
 ]
