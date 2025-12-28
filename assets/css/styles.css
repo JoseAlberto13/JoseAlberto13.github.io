@@ -143,7 +143,7 @@ header nav .menu a:hover {
 
 .animated-text {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-family: monospace;
     overflow: hidden; /* Oculta el texto que no está visible durante la animación */
     border-right: 2px solid var(--cursor-color); /* Simula el cursor */
@@ -192,8 +192,8 @@ header nav .menu a:hover {
 }
 
 .about-img {
-    width: 20rem; /* Tamaño original en rem */
-    height: 20rem;
+    width: 22rem; /* Tamaño original en rem */
+    height: 23rem;
     max-width: 100%;
     border-radius: 50%;
     object-fit: cover;
@@ -221,7 +221,7 @@ header nav .menu a:hover {
 
 /* Redes sociales - Social Media Section */
 .social-links {
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -251,7 +251,15 @@ header nav .menu a:hover {
 
 .social-icon:hover {
     box-shadow: 0 4px 8px 3px rgb(189 188 255 / 80%); /* Sombra más intensa al pasar el cursor */
-} 
+}
+
+.social-text {
+    margin-top: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
 
 /* Sections */
 section {
